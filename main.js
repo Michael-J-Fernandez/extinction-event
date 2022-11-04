@@ -1,76 +1,55 @@
 let speciesCross = document.querySelectorAll('ol li');
 
-function speciesCrossFunc() {
+speciesCross.forEach(dinoItem => {
 
-    for (let i = 0; i < speciesCross.length; i++) {
-
-        speciesCross[i].addEventListener('click', () => {
-            console.log(speciesCross[i].innerText);
-            speciesCross[i].style.textDecoration = 'line-through';
-        })
-    }
-}
-
-speciesCrossFunc();
+    dinoItem.addEventListener('click', () => {
+        console.log(dinoItem.innerText);
+        dinoItem.style.textDecoration = 'line-through';
+    })
+})
 
 
 
 
 let speciesFade = document.querySelectorAll('ul li');
 
-function speciesFadeFunc(){
+speciesFade.forEach(dinoItem => {
     
-    for (let i = 0; i < speciesFade.length; i++) {
-        
-        speciesFade[i].addEventListener('click', () => {
-            console.log(speciesFade[i].innerText);
-            speciesFade[i].style.opacity = '0';
-        })
-    }
-}
-
-speciesFadeFunc()
+    dinoItem.addEventListener('click', () => {
+        console.log(dinoItem.innerText);
+        dinoItem.style.opacity = '0';
+    })
+})
 
 
 
 
 let dinoCollapse = document.querySelectorAll('#row img');
 
-function dinoCollapseFunc(){
-
-    for (let i = 0; i < dinoCollapse.length; i++) {
-        
-        dinoCollapse[i].addEventListener('click', () => {
-            console.log(dinoCollapse[i].innerText);
-            dinoCollapse[i].style.width = '0px'
-        })
-    }
-}
-
-dinoCollapseFunc();
+dinoCollapse.forEach(dinoItem => {
+    
+    dinoItem.addEventListener('click', () => {
+        console.log(dinoItem.innerText);
+        dinoItem.style.width = '0px'
+    })
+})
 
 
 
 
 let meteor = document.querySelector('#destroy-all');
 
-function destroyAll() {
+meteor.addEventListener('click', () => {
 
-    meteor.addEventListener('click', () => {
-
-        for (let i = 0; i < speciesCross.length; i++) {
-            speciesCross[i].style.textDecoration = 'line-through';
-        }
-
-        for (let i = 0; i < speciesFade.length; i++) {
-            speciesFade[i].style.opacity = '0';
-        }
-
-        for (let i = 0; i < dinoCollapse.length; i++) {
-            console.log(dinoCollapse[i].innerText);
-            dinoCollapse[i].style.width = '0px'
-        }
+    speciesCross.forEach(dinoItem => {
+        dinoItem.style.textDecoration = 'line-through';
     })
-}
 
-destroyAll();
+    speciesFade.forEach(dinoItem => {
+        dinoItem.style.opacity = '0';
+    })
+
+    dinoCollapse.forEach(dinoItem => {
+        dinoItem.style.width = '0px';
+    })
+})
